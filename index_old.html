@@ -4,9 +4,6 @@
 <head>
 <link rel="icon" type="image/gif" href="images/favicon.gif">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<meta name="MobileOptimized" content="320">
-<meta name="HandheldFriendly" content="True">
 <meta property="og:url" content="http://holvagypetra.hu/"/>
 <meta property="og:title" content="Hol vagy Petra?"/>
 <meta property="og:image" content="http://holvagypetra.hu/images/felirat.png"/>
@@ -17,69 +14,92 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
 <script type="text/javascript">
 <!--
-if (screen.width > 699) {
-document.location = "http://holvagypetra.hu/index_old.html";
+if (screen.width <= 699) {
+document.location = "index_m.html";
 }
 //-->
 </script>
+<!--[if lt IE 9]>
+     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <style>
-
-body{	
-	margin:0;
-	padding:0;
-	border:0;			
-	width:100%;
-	background:#fff;					
-	
+footer{
+	padding-top:3%;
+	font-size: 0.8em;
 }
+#left{
+	float:left;
+	width:24%
 
-#csaj{
-	margin:auto;
-	width:100%
+}
+#center{
+	padding-top:1%;
+	padding-bottom:1%;
+	padding-left:6%;
+	padding-right:18%;
+	float:left;
+	width:42%;	
+	text-align: center;
 }
 
 #girl {
-	width: 60%;
-	display: block; 
-	float: none;
-	margin:auto;
-
+	float:right;
+	max-width: 80%;
+	max-height: 90%;
+	padding-top: 10%;
 }
 
 #title {	
 	margin: auto;
+	max-width:60%;
 }
 
-#logo{	
-	width:100%;
+#logo{
+	
+	max-width:100%;
 }
 
 #text{
 	text-align:left;
 	margin: auto;
-	width:90%;
+	margin-bottom: 1.5em;
+	padding-top:2%;
+	max-width:600px;
 }
 
 #list{
-	padding-left:28%;
+	padding-left:30%;
+	font-size: 1.1em;
+	line-height: 1.45em;
 }
 
 html,body {	
 	font-family: "Segoe UI",Arial;
 	font-size: 0.95em;
-	line-height: 1.45em;  
+	line-height: 1.45em;    
+}
+
+html { 
+  background: url(images/hvp_hatter.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
 #form{
+	overflow: overlay;
 	margin: auto;
-	width:100%;
+	max-width:600px;
 }
-#emailform{
-	margin: auto;
+
+#form .textarea {
+	height: 150px;
 }
 
 #form .input {
 	float: left;
+	font: 15px Arial, Helvetica;
 	padding: 5px;
 	margin: 0 0 20px 10px;
 	border: 1px solid #b9bdc1;
@@ -92,79 +112,99 @@ html,body {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
-
 #form label {
 	font-weight:600;
 	width: 25%;
 	text-align:right;
-	float: left;	
+	float: left;
+	
 }
 
-.button {
-	-webkit-border-radius: 5px;
-	color: #fff;
-	display: block;
-	font-size: 110%;
-	font-weight: bold;
-	height: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 20px;
-	text-align: center;
-	vertical-align: middle;
-	width:80%;    
+#form .button {
+	float:left;
+    display: inline-block;
+    zoom: 1; 
+    display: inline;
+    vertical-align: baseline;
+    margin-left: 10px;
 	border: none;
     outline: none;
+    cursor: pointer;
+    text-align: center;
     text-decoration: none;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: .4em 1.5em .42em;
+    -webkit-border-radius: .6em; 
+    -moz-border-radius: .6em;
+    border-radius: .6em;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3);
     -moz-box-shadow: 0 1px 1px rgba(0,0,0,.3);
     box-shadow: 0 1px 1px rgba(0,0,0,.3);
 }
 
-.gbutton{
-	background:#F5F5F5 ;
-	color:#888888;
-    text-decoration: none;
-	
-}
-
-.gbutton:active{
+#form .gbutton:hover {
     text-decoration: none;
 	background:#d90d14;
 	color:white;
 }
 
-.fbutton{
+#form .button:active {
+    position: relative;
+    top: 1px;
+}
+
+#form .fbutton{
 	background:#4a66a0;
 	color:white;
 	text-decoration: none;
 }
 
+#form .fbutton:hover{
+	background:#4a66a0;
+	color:white;
+	text-decoration: none;
+}
+
+.hidden{
+	width: 25%;
+	visibility:hidden;
+	text-align:right;
+	float: left;
+}
 .nev{
 	display: none;
+}
+#arrow{
+	
+	max-width:12%;
+	position:absolute;
+	z-index:100;
+}
+#nyil{
+	width:100%;
 }
 </style>
 </head>
 <body>
 
-<div id="title"><img id="logo"  src="images/felirat_m.png" alt="Hol vagy Petra?"></div>
-<div id="csaj"><img id="girl"  src="images/mannequin_m.png" alt="Petrát imitáló fényképmontázs"></div>
-
-	<div id="text">	
-		<p>Keresek egy Petra nevű, csinos, szőke lányt. Találkoztunk, nem kértem el a számát, megbántam. De mivel irtó sármos, intelligens és humoros is vagyok, minden bizonnyal odáig lesz, ha meglelem. A legfontosabb információk, amikről ráismerhetsz:</p>
-		<ul id="list">
-			<li>Petra szőke</li>
-			<li>Petra !!!nagyon!!! csinos</li>
-			<li>Petra kedves</li>
-			<li>szép a mosolya</li>
-			<li>főiskolás Budapesten?</li>
-			<li>a Virágot szereti</li>
-			<li>a narancs savanyú</li>
-			<li>EFOTT + BME napok</li>
-		</ul>
-		<p>Nem egészen normális dolog így keresni egy lányt, de miért ne? Ha úgy gondolod ráismertél, vagy esetleg magadra, küldd el a tippedet! A becsületes megtalálónak természetesen busás jutalom, Petrának örök boldogság. Egy próbát megér. :)</p>
+<div id="left"><img id="girl"  src="images/mannequin.png" alt="Petrát imitáló fényképmontázs"></div>
+<div id="center">
+	<div id="title"><img id="logo"  src="images/felirat.png" alt="Hol vagy Petra?"></div>
+	<div id="text">
+	
+	<p>Keresek egy Petra nevű, csinos, szőke lányt. Találkoztunk, nem kértem el a számát, megbántam. De mivel irtó sármos, intelligens és humoros is vagyok, minden bizonnyal odáig lesz, ha meglelem. A legfontosabb információk, amikről ráismerhetsz:</p>
+	<ul id="list">
+		<li>Petra szőke</li>
+		<li>Petra !!!nagyon!!! csinos</li>
+		<li>Petra kedves</li>
+		<li>szép a mosolya</li>
+		<li>főiskolás Budapesten?</li>
+		<li>a Virágot szereti</li>
+		<li>a narancs savanyú</li>
+		<li>EFOTT + BME napok</li>
+	</ul>
+	<p><del>Nem egészen</del> Egészen nem normális dolog így keresni egy lányt, de miért ne? Ha úgy gondolod ráismertél, vagy esetleg magadra, küldd a tipped alul!(vagy <a href="mailto:holvagypetra@gmail.com?subject=szerintem ő az">itt</a>) Ha nem, akkor oszthatod facsén, és tutira rád mosolyog a szerencse! A becsületes megtalálónak természetesen busás jutalom, Petrának örök boldogság. Egy próbát megér. :)</p>
 	</div>
 	<div id="form">
 		<form id="emailform" >  
@@ -175,15 +215,38 @@ html,body {
             <input type="email" class="input" name="email" placeholder="email címed (nem muszáj megadni)"><br/>
 			
             <label for="message">üzenet:</label>
-            <textarea class="input textarea" name="message" placeholder="facebook link, email cím vagy valami..."></textarea> <br/>   			
+            <textarea class="input textarea" name="message" placeholder="facebook link, email cím vagy valami..."></textarea> <br/>   
 			
+			<div class="hidden">x</div>
             <input type="submit" class="button gbutton" value="Küldöm">
 			<input type="button" class="button fbutton" value="Megosztom">
 			
-		</form>		
+		</form>
+		
+		
 	</div>
+	<!--<footer><div>© holvagypetra.hu</div></footer>-->
+	<div id="arrow"></div>
+</div>
+
 <script>
+function szokeseg(){
+	var petra=$("#girl");
+	var cx = petra.width() / 2,
+    cy = petra.height() / 2;
+	var pos = $(petra).offset();
+	cx = 2*cx+pos.left;
+	cy += pos.top;
+	$("#arrow").css({"top": cy+"px", "left": cx+"px"});
+	
+};
+
 $( document ).ready(function() {
+	$("#girl").on('load', function(){
+		szokeseg();
+		$('<img id="nyil"  src="images/nyil.png" alt="ilyen volt szőkesége">').appendTo("#arrow");
+	});
+	$( window ).resize(szokeseg);
     $('form').on('submit', function(event){
     event.preventDefault();
 	var data = {};
@@ -211,7 +274,9 @@ $( document ).ready(function() {
 	$('.fbutton').click(function(){
 		window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fholvagypetra.hu", '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=300,width=600');
 	});
+	
 });
+
 
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -223,6 +288,8 @@ $( document ).ready(function() {
   ga('send', 'pageview');
 
 
-</script>	
+
+
+</script>
 </body>
 </html>
